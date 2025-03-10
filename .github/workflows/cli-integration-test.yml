@@ -56,7 +56,7 @@ jobs:
         run: mvn -B clean install -Dno-format -Dquarkus.ingress.devservices.port-forward-enabled=false
 
       - name: Execute the IT test using kind container
-        run: mvn test -Dtest=ArgocdExtensionDevModeIT
+        run: mvn test -Dtest=ArgocdExtensionDevModeIT -Dsurefire.failIfNoSpecifiedTests=false
 
       - name: Install Quarkus CLI and register the plugin
         run: |
