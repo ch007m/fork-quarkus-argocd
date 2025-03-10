@@ -1,4 +1,4 @@
-name: CLI integration test
+name: CLI and DevService integration test
 
 on:
   workflow_dispatch:
