@@ -192,17 +192,19 @@ public class ArgocdExtensionProcessor {
                 // @formatter:on
         client.resource(argocdIngressRoute).create();
 
-        // Port-forward the traffic from host port to pod's container's port
-        Pod argocdServerPod = client.pods()
-                .inNamespace(ARGOCD_CONTROLLER_NAMESPACE)
-                .withLabel("app.kubernetes.io/name", ARGOCD_SERVER_NAME)
-                .list().getItems().get(0);
+        if (ingressConfig.portForwardEnabled()) {
+            // Port-forward the traffic from host port to pod's container's port
+            Pod argocdServerPod = client.pods()
+                    .inNamespace(ARGOCD_CONTROLLER_NAMESPACE)
+                    .withLabel("app.kubernetes.io/name", ARGOCD_SERVER_NAME)
+                    .list().getItems().get(0);
 
-        LOG.info("Launch Port Forward ...");
-        LocalPortForward portForward = client.pods()
-                .resource(argocdServerPod)
-                .portForward(8080, Integer.parseInt(argoConfig.hostPort()));
-        LOG.infof("Port forwarded to the host port: %d", portForward.getLocalPort());
+            LOG.info("Launch Port Forward ...");
+            LocalPortForward portForward = client.pods()
+                    .resource(argocdServerPod)
+                    .portForward(8080, Integer.parseInt(argoConfig.hostPort()));
+            LOG.infof("Port forwarded to the host port: %d", portForward.getLocalPort());
+        }
 
         if (argoConfig.debugEnabled()) {
             // List the pods running under the Argocd controller namespace

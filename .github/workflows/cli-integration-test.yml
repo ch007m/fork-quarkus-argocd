@@ -89,7 +89,7 @@ jobs:
           quarkus plug ls
           
           echo "## Compile the quarkus app"
-          mvn -B install -Dno-format
+          mvn -B install -Dno-format -Dquarkus.ingress.devservices.port-forward-enabled=false
 
           # Troubleshooting information
           ls -al

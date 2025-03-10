@@ -15,4 +15,10 @@ public interface IngressDevServiceConfig {
      */
     @WithDefault("latest")
     String version();
+
+    /**
+     * Enable to forward the ingress traffic from the container to the local host
+     */
+    @WithDefault("true")
+    boolean portForwardEnabled();
 }
