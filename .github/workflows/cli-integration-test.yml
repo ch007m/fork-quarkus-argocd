@@ -55,9 +55,8 @@ jobs:
       - name: Build with Maven
         run: mvn -B clean install -Dno-format -Dquarkus.ingress.devservices.port-forward-enabled=false
 
-      - name: Build with Maven
-        run: mvn -B clean install -Dno-format -Dquarkus.ingress.devservices.port-forward-enabled=false
-
+      - name: Execute the IT test using kind container
+        run: mvn test -Dtest=ArgocdExtensionDevModeIT
 
       - name: Install Quarkus CLI and register the plugin
         run: |
