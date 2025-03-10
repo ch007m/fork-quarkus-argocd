@@ -29,9 +29,9 @@ import io.quarkiverse.argocd.v1alpha1.Application;
 import io.quarkus.test.junit.QuarkusTest;
 
 @QuarkusTest
-public class ArgocdExtensionDevModeTest {
+public class ArgocdExtensionDevModeIT {
 
-    private static final Logger LOG = Logger.getLogger(ArgocdExtensionDevModeTest.class);
+    private static final Logger LOG = Logger.getLogger(ArgocdExtensionDevModeIT.class);
     private static KubernetesClient client;
     private static String ARGOCD_NAMESPACE;
     private static final String ARGOCD_CONFIGMAP_PARAMS_NAME = "argocd-cmd-params-cm";
