@@ -73,6 +73,11 @@
                                     <include>attributes.adoc</include>
                                     <filtering>true</filtering>
                                 </resource>
+                                <resource>
+                                    <directory>${project.basedir}/../</directory>
+                                    <include>readme.adoc</include>
+                                    <filtering>false</filtering>
+                                </resource>
                             </resources>
                         </configuration>
                     </execution>
