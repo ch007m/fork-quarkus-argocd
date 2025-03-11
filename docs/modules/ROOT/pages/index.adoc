@@ -6,7 +6,7 @@ TIP: Describe what the extension does here.
 
 == Introduction
 
-include::../../../../README.adoc[]
+include::../README.adoc[]
 
 == Installation
 
