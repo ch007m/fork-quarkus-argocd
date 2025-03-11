@@ -4,6 +4,10 @@ include::./includes/attributes.adoc[]
 
 TIP: Describe what the extension does here.
 
+== Introduction
+
+include::../../../README.adoc
+
 == Installation
 
 If you want to use this extension, you need to add the `io.quarkiverse.argocd:quarkus-argocd` extension first to your build file.
