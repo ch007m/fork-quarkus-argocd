@@ -1,6 +1,6 @@
 = Quarkus ArgoCD
 
-image::https://img.shields.io/maven-central/v/io.quarkiverse.argocd/quarkus-argocd?logo=apache-maven&style=flat-square[Version, link="https://central.sonatype.com/artifact/io.quarkiverse.argocd/quarkus-argocd-parent"]
+image::https://img.shields.io/maven-central/v/io.quarkiverse.argocd/quarkus-argocd?logo=apache-maven&style=flat-square[Version, link="https://central.sonatype.com/artifact/io.quarkiverse.argocd/quarkus-argocd-parent", align="left"]
 
 Generate Argo CD Application as part of the Quarkus build or the Quarkus CLI.
 
