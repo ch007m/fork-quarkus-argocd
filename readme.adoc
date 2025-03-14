@@ -2,16 +2,18 @@
 
 image::https://img.shields.io/maven-central/v/io.quarkiverse.argocd/quarkus-argocd?logo=apache-maven&style=flat-square[Version, link="https://central.sonatype.com/artifact/io.quarkiverse.argocd/quarkus-argocd-parent", align="left"]
 
-Generate Argo CD Application as part of the Quarkus build or the Quarkus CLI.
+Generate Argo CD Application or Project as part of the Quarkus build or using the Quarkus CLI.
 
 == Features
 
-- Generate the Argo CD Application Kubernetes CR for the Quarkus application
+- Generate the Argo CD Application or Project Kubernetes CR for the Quarkus application
 - Command Line interface to install / uninstall and list Argo CD Application(s)
 - Integration with Quarkus Helm
+- DevServices able to install ArgoCD on kubernetes cluster: kind or k3s
 
 == Requirements
-- Project added under version control and pushed on a repository (e.g. GitHub, etc.)
+
+- Project added under a version control system and pushed on a repository (e.g. GitHub, etc.)
 - A Kubernetes cluster with Argo CD https://argo-cd.readthedocs.io/en/stable/getting_started/#1-install-argo-cd[installed] and https://argo-cd.readthedocs.io/en/stable/user-guide/application-specification/[supporting] `argoproj.io/v1alpha1`.
 
 == Building
@@ -24,9 +26,9 @@ mvn clean install
 
 == Usage
 
-To get the Argo CD custom resources generated, it is needed to add the `quarkus-argocd` extension to the project.
+To get the Argo CD custom resources generated, it is needed to add the `quarkus-argocd` extension to a Quarkus project.
 
-=== Add extension to your project
+=== Add the extension to your project
 
 To add the extension to the project, manually edit the `pom.xml` or `build.gradle` file.
 
@@ -48,7 +50,7 @@ dependencies {
 }
 ```
 
-After this step the Argo CD will be generated under the `.argocd` directory within the project root as part of the build.
+After this step the Argo CD yaml files will be generated under the `.argocd` directory within the project root as part of the build.
 
 === Using the CLI
 
